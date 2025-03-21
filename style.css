@@ -9,12 +9,62 @@ body {
     color: #fff; /* Texto branco */
 }
 
+.logo {
+    position: absolute; /* Posiciona a logo de forma absoluta */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    max-width: 350px; /* Ajuste o tamanho da logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/*Aqui adicionamos "Esqueci a senha" e o Lembrar-Me*/
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-options .esqueci-senha {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-options .esqueci-senha:hover {
+    text-decoration: underline;
+}
+
+/* Ajusta o alinhamento do checkbox e texto "Não sou um robô" */
+.form-group.checkbox-group {
+    display: flex; /* Coloca os elementos em linha */
+    align-items: center; /* Alinha verticalmente o checkbox e o texto */
+    gap: 8px; /* Espaçamento entre o checkbox e o texto */
+    justify-content: flex-start; /* Move o conteúdo para a esquerda */
+    margin-top: 10px; /* Adiciona um espaçamento superior */
+}
+
+/* Ajusta o texto "Não sou um robô" */
+.form-group.checkbox-group label {
+    font-size: 14px; /* Ajusta o tamanho do texto */
+    color: #333; /* Cor do texto */
+    white-space: nowrap; /* Impede quebra de linha */
+}
+
 .container {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 30px 50px;
-    width: 400px;
+    padding: 40px 60px; /* Aumenta o espaçamento interno */
+    width: 650px; /* Aumenta a largura do container */
     text-align: center;
     color: #333; /* Texto escuro dentro do container */
 }
@@ -28,18 +78,22 @@ body {
 .form-group {
     margin-bottom: 20px;
     text-align: left;
+    display: flex; /* Torna o grupo flexível */
+    flex-direction: column; /* Mantém os elementos em coluna */
 }
 
+/* Alinha a caixa de seleção com o texto */
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333; /* Texto escuro */
+    display: flex; /* Torna o label um contêiner flexível */
+    align-items: center; /* Alinha verticalmente o texto e a caixa */
+    gap: 8px; /* Espaçamento entre a caixa e o texto */
+    font-size: 14px; /* Ajusta o tamanho do texto */
+    color: #333; /* Cor do texto */
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 2px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
@@ -79,4 +133,4 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
-    }} 
+}} 
