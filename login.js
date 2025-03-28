@@ -1,16 +1,23 @@
-document.getElementById('formLogin').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio do formulário
+document.addEventListener('DOMContentLoaded', function () {
+    const formLogin = document.getElementById('formLogin');
 
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
+    if (formLogin) {
+        formLogin.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita o envio do formulário
 
-    // Dados de exemplo para validação
-    const usuarioCorreto = "aquilesmoroniexpres@hotmail.com";
-    const senhaCorreta = "#123";
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
 
-    if (email === usuarioCorreto && senha === senhaCorreta) {
-        console.log("Login bem-sucedido! Usuário autenticado.");
-    } else {
-        console.log("Erro: E-mail ou senha incorretos.");
+            // Recupera os dados do usuário do Local Storage
+            const usuarioSalvo = JSON.parse(localStorage.getItem('usuario'));
+
+            if (usuarioSalvo && email === usuarioSalvo.email && senha === usuarioSalvo.senha) {
+                alert('Login bem-sucedido! Bem-vindo, ' + usuarioSalvo.nome);
+                // Redirecionar para a página principal ou dashboard
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Erro: E-mail ou senha incorretos.');
+            }
+        });
     }
-}); 
+});
