@@ -1,12 +1,13 @@
+/* Estilo de fundo reutilizado do faleconosco.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
+    background-color: #333399; /* Fundo azul escuro */
+    color: white; /* Texto branco */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    background-color: #004aad; /* Fundo azul */
-    color: #fff; /* Texto branco */
 }
 
 .logo {
@@ -92,17 +93,6 @@ body {
 }
 
 /* Aqui personalizamos a tela do formulário da IA */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .container {
     background-color: #d9d9d9;
     border-radius: 10px;
@@ -224,4 +214,34 @@ input {
     to {
         opacity: 1;
         transform: translateY(0);
-}} 
+}}
+
+/* Estilo da barra de navegação */
+.navbar {
+    background-color: #333399; /* Cor de fundo azul escuro */
+    padding: 15px;
+    text-align: center;
+    position: fixed; /* Fixa a barra no topo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.navbar a {
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    background-color: #4444aa; /* Cor de fundo ao passar o mouse */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Adiciona espaço no conteúdo para não sobrepor a navbar */
+.content {
+    margin-top: 70px; /* Espaço para evitar sobreposição com a navbar */
+}
