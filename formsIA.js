@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(dados)
             });
             const resultado = await response.json();
-            alert('Resultado da IA: ' + JSON.stringify(resultado));
+            localStorage.setItem('resultadoIA', JSON.stringify(resultado));
+            window.location.href = 'grafico.html';
         } catch (error) {
             alert('Erro ao conectar com a API: ' + error);
         }
