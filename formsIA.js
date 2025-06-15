@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
         etapa1.style.display = 'block';
     });
 
-    // Funções de mapeamento (ajuste conforme sua lógica)
     function mapGenero(valor) {
         if (valor.toLowerCase().includes('masc')) return 1;
         if (valor.toLowerCase().includes('fem')) return 0;
@@ -29,9 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return 0;
     }
 
-    // Captura os dados do formulário ao enviar
     form.addEventListener('submit', async function (event) {
         event.preventDefault();
+
+        // Captura o nome do aluno
+        const nomeAluno = document.getElementById('nome').value;
 
         // Mapeie os campos do formulário para os campos esperados pela API
         const Gender = mapGenero(document.getElementById('genero').value);
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const Mobile_phone_use_for_education = mapSimNao(document.getElementById('uso-educacional').value);
         const Health_rating = document.getElementById('saude').value.length;
 
+        // Aqui passamos SOMENTE OS VALORES IMPORTANTES PARA A IA:
         const dados = {
             Gender,
             Age,
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(dados)
             });
             const resultado = await response.json();
+            resultado.nomeAluno = nomeAluno; // Adiciona o nome para exibir depois
             localStorage.setItem('resultadoIA', JSON.stringify(resultado));
             window.location.href = 'grafico.html';
         } catch (error) {

@@ -51,33 +51,9 @@
         <a href="#">Minha Conta</a>
     </nav>
     <div class="content">
-        <h1>Gráfico de Dados Coletados no DATASET</h1>
+        <h1>Resultado do Formulário</h1>
         <div id="resultado"></div>
-        <div class="graficos-container">
-            <div>
-                <h2>Matriz de Confusão</h2>
-                <img src="http://localhost:8000/grafico/matriz_confusao.png" alt="Matriz de Confusão">
-            </div>
-            <div>
-                <h2>Matriz de Correlação</h2>
-                <img src="http://localhost:8000/grafico/matriz_correlacao.png" alt="Matriz de Correlação">
-            </div>
-            <div>
-                <h2>Histograma da Idade</h2>
-                <img src="http://localhost:8000/grafico/histograma_idade.png" alt="Histograma da Idade">
-            </div>
-            <div>
-                <h2>Importância das Features</h2>
-                <img src="http://localhost:8000/grafico/importancia_features.png" alt="Importância das Features">
-            </div>
-        </div>
     </div>
     <script src="grafico.js"></script>
-    <script>
-        // Chama a função automaticamente ao carregar a página
-        if (typeof exibirMetricasModelo === "function") {
-            exibirMetricasModelo();
-        }
-    </script>
 </body>
-</html>
+</html> 

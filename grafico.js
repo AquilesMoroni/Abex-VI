@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (resultado && resultado.probability !== undefined) {
         document.getElementById('resultado').innerHTML =
             `<h2>Previsão Individual</h2>
-            <p>Probabilidade de ser afetado pelo uso do celular nos estudos: <b>${resultado.probability}%</b></p>`;
+            <p>O aluno <b>${resultado.nomeAluno || 'NÃO IDENTIFICADO'}</b> está <b>${resultado.probability}%</b> afetado pelo uso do celular nos estudos.</p>`;
     } else {
         document.getElementById('resultado').innerText =
             'Nenhum dado encontrado para gerar o resultado individual.';
