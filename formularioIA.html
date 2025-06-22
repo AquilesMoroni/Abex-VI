@@ -7,91 +7,140 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>PESQUISA E COLETA DE DADOS</h1>
-        <form id="formPesquisa">
-            <!-- Etapa 1 -->
-            <div id="etapa1">
-                <div class="form-row">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-                    <label for="atividades">Lista de atividades de celular usadas para fins educacionais:</label>
-                    <input type="text" id="atividades" name="atividades" placeholder="Digite as atividades">
-                </div>
-                <div class="form-row">
-                    <label for="idade">Idade:</label>
-                    <input type="number" id="idade" name="idade" placeholder="Digite sua idade" required>
-                    <label for="utilidade">Uso do celular é útil para estudar?</label>
-                    <input type="text" id="utilidade" name="utilidade" placeholder="Digite sua resposta">
-                </div>
-                <div class="form-row">
-                    <label for="genero">Gênero:</label>
-                    <input type="text" id="genero" name="genero" placeholder="Digite seu gênero" required>
-                    <label for="aplicativos">Lista de aplicativos educacionais usados:</label>
-                    <input type="text" id="aplicativos" name="aplicativos" placeholder="Digite os aplicativos">
-                </div>
-                <div class="form-row">
-                    <label for="smartphone">Possui um Smartphone?</label>
-                    <input type="text" id="smartphone" name="smartphone" placeholder="Sim ou Não" required>
-                    <label for="tempo">Tempo médio diário gasto usando o celular para fins educacionais (em horas):</label>
-                    <input type="number" id="tempo" name="tempo" placeholder="Digite o tempo">
-                </div>
-                <div class="form-row">
-                    <label for="sistema">Sistema Operacional do Smartphone?</label>
-                    <input type="text" id="sistema" name="sistema" placeholder="Digite o sistema operacional">
-                    <label for="desempenho">O uso do celular afeta o desempenho acadêmico?</label>
-                    <input type="text" id="desempenho" name="desempenho" placeholder="Digite sua resposta">
-                </div>
-                <div class="form-row">
-                    <label for="uso-educacional">Utiliza o Smartphone para uso educacional?</label>
-                    <input type="text" id="uso-educacional" name="uso-educacional" placeholder="Sim ou Não">
-                    <label for="distracao">O uso do celular distrai dos estudos?</label>
-                    <input type="text" id="distracao" name="distracao" placeholder="Digite sua resposta">
-                </div>
-                <button type="button" class="btn" id="btnProximo">Próximo</button>
+<div class="container">
+    <h1>PESQUISA E COLETA DE DADOS</h1>
+    <form id="formPesquisa">
+        <!-- Etapa 1 -->
+        <div id="etapa1">
+            <div class="form-row">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required pattern="^[A-Za-zÀ-ÿ\s]+$" title="Digite apenas letras e espaços">
+                <label for="atividades">Atividades realizadas no celular:</label>
+                <select id="atividades" name="atividades" required>
+                    <option value="">Selecione</option>
+                    <option value="Social Media">Midia Social</option>
+                    <option value="Web-browsing">Pesquisas na Web</option>
+                    <option value="Messaging">Mensagem</option>
+                    <option value="All of these">Todas as opções anteriores</option>
+                </select>
             </div>
-    
-            <!-- Etapa 2 -->
-            <div id="etapa2" style="display: none;">
-                <div class="form-row">
-                    <label for="atencao">O uso do celular afetou o período de atenção?</label>
-                    <input type="text" id="atencao" name="atencao" placeholder="Digite sua resposta">
-                    <label for="precaucoes">Está tomando precauções para mitigar potenciais riscos à saúde?</label>
-                    <input type="text" id="precaucoes" name="precaucoes" placeholder="Digite sua resposta">
-                </div>
-                <div class="form-row">
-                    <label for="recursos">Quais recursos dos telefones celulares são úteis para o aprendizado?</label>
-                    <input type="text" id="recursos" name="recursos" placeholder="Digite sua resposta">
-                    <label for="saude">Como classificaria sua saúde física e mental geral?</label>
-                    <input type="text" id="saude" name="saude" placeholder="Digite sua resposta">
-                </div>
-                <div class="form-row">
-                    <label for="riscos">Está ciente dos riscos potenciais para a saúde associados ao uso excessivo de telefones celulares?</label>
-                    <input type="text" id="riscos" name="riscos" placeholder="Digite sua resposta">
-                    <label for="frequencia">Com que frequência os sintomas são sentidos?</label>
-                    <input type="text" id="frequencia" name="frequencia" placeholder="Digite sua resposta">
-                </div>
-                <div class="form-row">
-                    <label for="disciplinas">Quais disciplinas se beneficiam mais do uso do celular?</label>
-                    <input type="text" id="disciplinas" name="disciplinas" placeholder="Digite sua resposta">
-                    <label for="sintomas">Está apresentando algum sintoma físico ou mental relacionado ao uso do celular?</label>
-                    <input type="text" id="sintomas" name="sintomas" placeholder="Digite sua resposta">
-                </div>
-                <button type="button" class="btn" id="btnVoltar">Voltar</button>
-                <button type="submit" class="btn">Enviar</button>
+            <div class="form-row">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" placeholder="Digite sua idade" min="10" max="100" required>
+                <label for="utilidade">Uso do celular é útil para estudar?</label>
+                <select id="utilidade" name="utilidade" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
             </div>
-        </form>
-    </div>
+            <div class="form-row">
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Selecione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+                <label for="aplicativos">Aplicativos educacionais usados:</label>
+                <select id="aplicativos" name="aplicativos" required>
+                    <option value="">Selecione</option>
+                    <option value="Educational Videos">Vídeos Educacionais</option>
+                    <option value="Study Planner">Plano de Estudos</option>
+                    <option value="Language">Linguagem</option>
+                    <option value="Productivity Tools">Ferramentas de Produtividade</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="tempo">Tempo médio diário gasto usando o celular para fins educacionais (em horas):</label>
+                <input type="number" id="tempo" name="tempo" placeholder="Digite o tempo" min="0" max="24" required>
+            </div>
+            <div class="form-row">
+                <label for="sistema">Sistema Operacional do Smartphone:</label>
+                <select id="sistema" name="sistema" required>
+                    <option value="">Selecione</option>
+                    <option value="Android">Android</option>
+                    <option value="IOS">IOS</option>
+                </select>
+                <label for="desempenho">O uso do celular afeta o desempenho acadêmico?</label>
+                <select id="desempenho" name="desempenho" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="uso-educacional">Utiliza o Smartphone para uso educacional?</label>
+                <select id="uso-educacional" name="uso-educacional" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+                <label for="distracao">O uso do celular distrai dos estudos?</label>
+                <select id="distracao" name="distracao" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <button type="button" class="btn" id="btnProximo">Próximo</button>
+        </div>
 
-    <nav class="navbar">
-        <a href="#">Diagnóstico Profissional</a>
-        <a href="#">Comunidade</a>
-        <a href="#">Conversa com Profissional</a>
-        <a href="#">Diário Pessoal</a>
-        <a href="#">Evolução Pessoal</a>
-        <a href="#">Minha Conta</a>
-    </nav>
-
-    <script src="formsIA.js"></script>
-</body>
-</html>
+        <!-- Etapa 2 -->
+        <div id="etapa2" style="display: none;">
+            <div class="form-row">
+                <label for="atencao">O uso do celular afetou o período de atenção?</label>
+                <select id="atencao" name="atencao" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+                <label for="precaucoes">Está tomando precauções para mitigar potenciais riscos à saúde?</label>
+                <select id="precaucoes" name="precaucoes" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="recursos">Quais recursos dos telefones celulares são úteis para o aprendizado?</label>
+                <input type="text" id="recursos" name="recursos" placeholder="Digite sua resposta" pattern="^[A-Za-zÀ-ÿ\s,]+$" title="Digite apenas letras, vírgulas e espaços" required>
+                <label for="saude">Como classificaria sua saúde física e mental geral?</label>
+                <select id="saude" name="saude" required>
+                    <option value="">Selecione</option>
+                    <option value="Excellent">Excelente</option>
+                    <option value="Good">Boa</option>
+                    <option value="Fair">Regular</option>
+                    <option value="Poor">Ruim</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="riscos">Está ciente dos riscos potenciais para a saúde associados ao uso excessivo de telefones celulares?</label>
+                <select id="riscos" name="riscos" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+                <label for="frequencia">Com que frequência os sintomas são sentidos?</label>
+                <select id="frequencia" name="frequencia" required>
+                    <option value="">Selecione</option>
+                    <option value="As vezes">Às vezes</option>
+                    <option value="Nenhuma vez">Nenhuma vez</option>
+                    <option value="A todo momento">A todo momento</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="disciplinas">Quais disciplinas se beneficiam mais do uso do celular?</label>
+                <input type="text" id="disciplinas" name="disciplinas" placeholder="Digite sua resposta" pattern="^[A-Za-zÀ-ÿ\s,]+$" title="Digite apenas letras, vírgulas e espaços" required>
+                <label for="sintomas">Está apresentando algum sintoma físico ou mental relacionado ao uso do celular?</label>
+                <select id="sintomas" name="sintomas" required>
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <button type="button" class="btn" id="btnVoltar">Voltar</button>
+            <button type="submit" class="btn">Enviar</button>
+        </div>
+    </form>
+</div>
+<script src="formsIA.js"></script>

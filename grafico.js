@@ -1,19 +1,4 @@
-function exibirMetricasModelo() {
-    fetch('http://localhost:8000/metrics')
-        .then(response => response.json())
-        .then(metrics => {
-            document.getElementById('resultado').innerHTML = `
-                <h2>Métricas do Modelo (CSV)</h2>
-                <ul>
-                    <li><b>Acurácia:</b> ${metrics.acuracia.toFixed(2)}</li>
-                    <li><b>F1-score:</b> ${metrics.f1_score.toFixed(2)}</li>
-                    <li><b>Sensibilidade:</b> ${metrics.sensibilidade.toFixed(2)}</li>
-                    <li><b>Precisão:</b> ${metrics.precisao.toFixed(2)}</li>
-                </ul>
-            `;
-        });
-}
-
+// Aqui exibimos o resultado individual do aluno que esta armazenado no localStorage não precisando de banco de dados
 document.addEventListener('DOMContentLoaded', function () {
     const resultado = JSON.parse(localStorage.getItem('resultadoIA'));
     if (resultado && resultado.probability !== undefined) {
