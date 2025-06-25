@@ -1,9 +1,3 @@
-Para fazer rodar o projeto!
-
-1 - Criar uma pasta na máquina e abrir no VSCODE
-
-2 - Realizar o Clone do HTTPS do Repositório do GIT 
-
-3 - Após o Clone rodar o arquivo mirroredhealth.ipynb 
-
-4 - No terminal do VS CODE rodar o projeto com uvicorn main:app --reload
+---->>> PARTE SOMENTE DO FRONT-END DO PROJETO,
+    ---->> NECESSÁRIO REALIZAR O CLONE DO BACK/API/IA ENCONTRADOS NO OUTRO REPOSITÓRIO: MIRROREDHEALTH,
+       ------> NELE CONTÉM OS PASSOS PARA RODAR O PROJETO COMPLETO !!! 
