@@ -1,9 +1,12 @@
 /* Reset básico */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: #49419e;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #49419e;
+    color: #fff;
 }
 
 /* Navbar */
@@ -11,11 +14,11 @@ body {
     background-color: #333399;
     padding: 15px;
     text-align: center;
-    position: fixed; /* Fixa a barra no topo */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ocupa toda a largura */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -29,134 +32,163 @@ body {
     background-color: #4444aa;
 }
 
-
 /* Container principal */
 .content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 40px); /* Ajuste conforme a altura da navbar */
-  margin-top: 40px; /* Espaço para a navbar fixa */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 40px);
+    margin-top: 60px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-
 h1 {
-  margin-bottom: 24px;
-  color: #222;
-  font-size: 2rem;
+    margin-bottom: 24px;
+    color: #f0f0f0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 #pontuacao {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #4caf50;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #4caf50;
 }
 
 .resultado-box {
-  margin: 0 auto;
-  margin-top: 24px;
-  padding: 24px 16px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  font-size: 1.1rem;
-  max-width: 500px;
-  transition: background 0.5s, color 0.5s;
-  animation: fade-in 1s;
+    margin: 0 auto;
+    margin-top: 24px;
+    padding: 24px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    font-size: 1.1rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    transition: background 0.5s, color 0.5s;
+    animation: fade-in 1s;
 }
 
 /* Estágios */
 .resultado-excelente {
-  background: linear-gradient(120deg, #c8f7c5 60%, #a5e1ad 100%);
-  color: #226d2c;
-  border: 2px solid #4caf50;
+    background: linear-gradient(120deg, #c8f7c5 60%, #a5e1ad 100%);
+    color: #226d2c;
+    border: 3px solid #4caf50;
 }
 .resultado-bom {
-  background: linear-gradient(120deg, #fff3cd 60%, #ffe082 100%);
-  color: #856404;
-  border: 2px solid #ffd600;
+    background: linear-gradient(120deg, #fff3cd 60%, #ffe082 100%);
+    color: #856404;
+    border: 3px solid #ffd600;
 }
 .resultado-ruim {
-  background: linear-gradient(120deg, #f8d7da 60%, #ffbaba 100%);
-  color: #721c24;
-  border: 2px solid #f44336;
+    background: linear-gradient(120deg, #f8d7da 60%, #ffbaba 100%);
+    color: #721c24;
+    border: 3px solid #f44336;
 }
 
-/* Animações */
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* Foguetes (Estágio 1) */
-#animacao-container {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: 1000;
-}
-.foguete {
-  position: absolute;
-  width: 20px; height: 20px;
-  background: transparent;
-  border-radius: 50%;
-  box-shadow: 0 0 5px 2px #fff, 0 0 10px 4px #ff0, 0 0 15px 6px #f00;
-  animation: subirEFadeOut 2.5s ease-out forwards;
-}
-@keyframes subirEFadeOut {
-  0% { transform: translateY(0) scale(0.5); opacity: 1;}
-  100% { transform: translateY(-100vh) scale(1); opacity: 0;}
-}
-
-/* Confete (Estágio 2) */
-.confete {
-  position: absolute;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  opacity: 0.85;
-  animation: cairConfete 2.2s linear forwards;
-}
-
+/* Cores da pontuação */
 .cor-pontuacao.verde {
-  color: #2e7d32;
+    color: #2e7d32;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 .cor-pontuacao.amarelo {
-  color: #ffd600;
-  text-shadow: 0 0 2px #856404;
+    color: #e6a700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 .cor-pontuacao.vermelho {
-  color: #f44336;
+    color: #d32f2f;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
+/* Animações Gerais */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* --- ANIMAÇÕES DE EFEITO --- */
+/* O contêiner da animação precisa cobrir toda a tela */
+#animacao-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* Foguetes (Estágio 1 - Excelente) */
+/* Aumentei o tamanho e o brilho da sombra para um efeito mais impactante */
+.foguete {
+    position: absolute;
+    width: 25px; /* Aumentado */
+    height: 25px; /* Aumentado */
+    border-radius: 50%;
+    animation: subirEFadeOut 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* Curva de animação mais dinâmica */
+    opacity: 0;
+}
+
+/* Animação com subida mais rápida e explosiva */
+@keyframes subirEFadeOut {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    30% { opacity: 1; transform: translateY(-30vh) scale(1); } /* Torna-se visível e maior mais rápido */
+    100% { transform: translateY(-120vh) scale(1.5); opacity: 0; } /* Sobe mais rápido e fica maior */
+}
+
+/* Confete (Estágio 2 - Bom) */
+/* Aumentei o tamanho e a duração da queda para um efeito mais visível */
+.confete {
+    position: absolute;
+    width: 15px; /* Aumentado */
+    height: 15px; /* Aumentado */
+    border-radius: 50%;
+    animation: cairConfete 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Curva de animação com "quique" */
+    opacity: 0;
+}
+
+/* Animação com queda mais dramática e giro mais rápido */
 @keyframes cairConfete {
-  0% { transform: translateY(0);}
-  100% { transform: translateY(100vh);}
+    0% { transform: translateY(-20vh) rotateZ(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotateZ(1080deg); opacity: 0; } /* Gira mais vezes */
 }
 
-/* Chuva triste (Estágio 3) */
+/* Lágrimas (Estágio 3 - Ruim) */
+/* Aumentei a duração e adicionei mais oscilação para um efeito mais expressivo */
 .lagrima {
-  position: absolute;
-  width: 8px; height: 24px;
-  background: linear-gradient(to bottom, #90caf9 60%, #1565c0 100%);
-  border-radius: 50% 50% 60% 60%/60% 60% 100% 100%;
-  opacity: 0.7;
-  animation: cairLagrima 1.8s linear forwards;
+    position: absolute;
+    width: 10px; /* Aumentado */
+    height: 30px; /* Aumentado */
+    background: linear-gradient(to bottom, #90caf9 60%, #1565c0 100%);
+    border-radius: 50% 50% 60% 60% / 60% 60% 100% 100%;
+    animation: cairLagrima 3s ease-in-out forwards; /* Curva de animação mais suave */
+    opacity: 0;
 }
+
+/* Animação com movimento lateral mais pronunciado */
 @keyframes cairLagrima {
-  0% { transform: translateY(0);}
-  100% { transform: translateY(100vh);}
+    0% { transform: translateY(-10vh) translateX(0px); opacity: 0.8; }
+    30% { transform: translateY(30vh) translateX(15px); opacity: 0.9; } /* Oscila para a direita */
+    70% { transform: translateY(70vh) translateX(-15px); opacity: 0.7; } /* Oscila para a esquerda */
+    100% { transform: translateY(110vh) translateX(0px); opacity: 0; }
 }
 
 /* Responsivo */
-@media (max-width: 700px) {
-  .content {
-    padding: 18px 4vw;
-    max-width: 98vw;
-  }
-  .resultado-box {
-    padding: 12px 2vw;
-    font-size: 1rem;
-  }
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+    .resultado-box {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    .navbar a {
+        padding: 8px 10px;
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
 }
